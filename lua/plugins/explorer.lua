@@ -10,6 +10,7 @@ return {
       { "<leader>o", "<cmd>Neotree focus<CR>", desc = "Focus explorer" },
     },
     opts = {
+      window = { position = "right" },
       filesystem = {
         follow_current_file = { enabled = true },
         -- VSCode-style: show EVERYTHING, never hide or dim.
