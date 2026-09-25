@@ -9,6 +9,7 @@ return {
     opts = {
       ensure_installed = {
         "tree-sitter-cli",
+        "lazygit",
       },
       auto_update = false,
       run_on_start = true,
