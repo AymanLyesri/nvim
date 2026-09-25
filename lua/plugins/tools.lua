@@ -9,7 +9,8 @@ return {
     opts = {
       ensure_installed = {
         "tree-sitter-cli",
-        "lazygit",
+        -- NOTE: no "lazygit" — Mason's registry doesn't carry it.
+        -- Install via system package: sudo pacman -S lazygit
       },
       auto_update = false,
       run_on_start = true,
