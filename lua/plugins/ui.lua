@@ -22,4 +22,13 @@ return {
     opts = {},
     keys = { { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer keymaps" } },
   },
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    opts = { stages = "fade", timeout = 3000 },
+    config = function(_, opts)
+      require("notify").setup(opts)
+      vim.notify = require("notify")
+    end,
+  },
 }

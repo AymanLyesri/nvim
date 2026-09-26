@@ -24,5 +24,23 @@ return {
         },
       },
     },
+    init = function()
+      vim.api.nvim_create_autocmd("VimEnter", {
+        group = vim.api.nvim_create_augroup("NeotreeAutoOpen", { clear = true }),
+        callback = function()
+          local argc = vim.fn.argc(-1)
+          if argc == 0 then
+            vim.cmd("Neotree show")
+          elseif argc == 1 then
+            local arg = vim.fn.argv(0) --[[@as string]]
+            if vim.fn.isdirectory(arg) == 1 then
+              vim.cmd("bd")
+              vim.cmd("Neotree show dir=" .. vim.fn.fnameescape(arg))
+            end
+          end
+        end,
+        desc = "Auto-open neo-tree on startup (no args or directory)",
+      })
+    end,
   },
 }

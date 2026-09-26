@@ -44,7 +44,7 @@ autocmd("LspAttach", {
     map("<leader>ca", vim.lsp.buf.code_action, "Code action")
     -- Inlay hints toggle (0.10+, see :help lsp-inlay_hint)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client and client.supports_method("textDocument/inlayHint") then
+    if client and client:supports_method("textDocument/inlayHint") then
       map("<leader>th", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf }))
       end, "Toggle inlay hints")
