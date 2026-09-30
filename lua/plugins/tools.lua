@@ -9,6 +9,11 @@ return {
     opts = {
       ensure_installed = {
         "tree-sitter-cli",
+        "stylua",
+        "ruff",
+        "prettierd",
+        "shfmt",
+        "shellcheck",
         -- NOTE: no "lazygit" — Mason's registry doesn't carry it.
         -- Install via system package: sudo pacman -S lazygit
       },

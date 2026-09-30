@@ -18,7 +18,7 @@ require("lazy").setup({
     { import = "plugins" }, -- every lua/plugins/*.lua is auto-loaded
   },
   defaults = { lazy = true, version = false },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "habamax" } },
   checker = { enabled = true, notify = false }, -- auto-check updates
   performance = {
     rtp = {

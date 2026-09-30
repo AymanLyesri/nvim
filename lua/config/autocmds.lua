@@ -31,6 +31,17 @@ autocmd("FileType", {
   desc = "Close helper buffers with q",
 })
 
+-- Inherit terminal (pywal) colors: transparent background on any colorscheme.
+autocmd("ColorScheme", {
+  group = augroup("TransparentBackground", { clear = true }),
+  callback = function()
+    for _, hl in ipairs({ "Normal", "NormalFloat", "SignColumn", "LineNr" }) do
+      vim.api.nvim_set_hl(0, hl, { bg = "none", ctermbg = "none" })
+    end
+  end,
+  desc = "Use terminal background (pywal)",
+})
+
 -- LSP extras on attach (native defaults like gd/grr/gra already exist)
 autocmd("LspAttach", {
   group = augroup("LspExtras", { clear = true }),

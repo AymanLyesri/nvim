@@ -26,7 +26,8 @@ function M.open()
     vim.cmd.term()
   end
   vim.cmd.startinsert()
-  vim.keymap.set("n", "<Esc>", M.hide, { buffer = M.state.buf, desc = "Hide floating terminal" })
+  vim.keymap.set("n", "<Esc>", M.hide, { buffer = M.state.buf, nowait = true, desc = "Hide floating terminal" })
+  vim.keymap.set("t", "<Esc>", M.hide, { buffer = M.state.buf, nowait = true, desc = "Hide floating terminal" })
 end
 
 function M.hide()

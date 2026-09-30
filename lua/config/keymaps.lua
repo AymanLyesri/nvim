@@ -19,6 +19,12 @@ map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
 
+-- Quit fast (save all + quit, closes explorer too)
+map("n", "<C-Esc>", "<cmd>wqa<CR>", { desc = "Save all + quit" })
+map("n", "<C-q>", "<cmd>wqa<CR>", { desc = "Save all + quit" })
+map("v", "<C-Esc>", "<cmd>wqa<CR>", { desc = "Save all + quit" })
+map("v", "<C-q>", "<cmd>wqa<CR>", { desc = "Save all + quit" })
+
 -- Move lines in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
